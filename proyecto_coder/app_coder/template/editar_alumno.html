@@ -1,0 +1,25 @@
+{% extends "padre.html "%}
+{% load static %}
+{% block contenido %}
+
+<form action="{% url 'editar_alumno' alumno.id %}" method="POST">
+    {% csrf_token %}
+    <p>{{mi_forms}}</p>
+    <h2><font face="Garamond">Ingrese el "Alumno" a modificar:</font></h2>
+
+    <p>Nombre:</p>
+    <input type="text" name="nombre" required>
+    <p>Apellido:</p>
+    <input type="text" name="apellido" required>
+
+    <input type="submit" value="Enviar">
+
+
+</form>
+<button><a href="{% url 'alumnos' %}">Volver </a></button>
+
+   
+
+</form>
+{% endblock %}
+

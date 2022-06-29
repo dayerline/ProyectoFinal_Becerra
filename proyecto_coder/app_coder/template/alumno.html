@@ -1,0 +1,34 @@
+{% extends "padre.html"%}
+{% load static %}
+
+{% block contenido %}
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col"><font face="Garamond">Id</font></th>
+          <th scope="col"><font face="Garamond">Nombre</font></th>
+          <th scope="col"><font face="Garamond">Apellido</font></th>
+        
+        
+      </tr>
+    </thead>
+    <tbody>
+        {% for n in alumnos%}
+        <tr>
+           
+            <th scope="row"><font face="Garamond">{{n.id}}</font></th>
+            <td><font size="4" face="Garamond">{{n.nombre}}</font></td>
+            <td><font size="4" face="Garamond">{{n.apellido}}</font></td>
+            <td><a href="{% url 'elimina_alumno' n.id %}">Borrar</a></td>
+            <td><a href="{% url 'editar_alumno' n.id %}">Editar</a></td>
+            
+        </tr>
+        {% endfor %}
+    
+    </tbody>
+  </table>
+  <button><a href="alta_alumno">Agregar nuevos Alumnos</a></button>
+  <button><a href="{% url 'home' %}">Volver </a></button>
+
+{% endblock %}

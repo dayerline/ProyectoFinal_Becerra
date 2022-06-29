@@ -1,0 +1,20 @@
+{% extends "padre.html "%}
+{% load static %}
+{% block contenido %}
+
+<form align="center" action="alta_alumno" method="POST">
+    {% csrf_token %}
+    <h1>Ingrese al Alumno: </h1>
+    <p>Nombre:</p>
+    <input type="text" name="nombre" required>
+    <p>Apellido:</p>
+    <input type="text" name="apellido" required>
+    
+    
+
+    <input type="submit" value="Enviar">
+    <button><a href="{% url 'alumnos' %}">Volver </a></button>
+
+</form>
+{% endblock %}
+

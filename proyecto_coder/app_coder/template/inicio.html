@@ -1,0 +1,17 @@
+{% extends "padre.html" %}
+{% load static %}
+    
+
+{% block contenido %}
+    <a href="{% url 'logout' %}">Salir</a>
+    <h1><font face="Garamond">Bienvenido/a</font></h1>
+    <div>
+        <img src="{{ url }}" width="50" height="50" alt="">
+    </div>
+
+
+{% endblock %}
+
+
+
+

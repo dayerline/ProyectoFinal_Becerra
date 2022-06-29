@@ -1,0 +1,37 @@
+{% extends "padre.html"%}
+{% load static %}
+
+{% block contenido %}
+
+<table class="table">
+    <thead>
+      <tr>
+        
+          <th scope="col"><font face="Garamond">Id</font></th>
+          <th scope="col"><font face="Garamond">Nombre</font></th>
+          <th scope="col"><font face="Garamond">Apellido</font></th>
+          <th scope="col"><font face="Garamond">Profesion</font></th>
+      
+
+      </tr>
+    </thead>
+    <tbody>
+        {% for n in profesores %}
+        <tr>
+           
+            <th scope="row"><font face="Garamond">{{n.id}}</font></th>
+            <td><font size="4" face="Garamond">{{n.nombre}}</font></td>
+            <td><font size="4" face="Garamond">{{n.apellido}}</font></td>
+            <td><font size="4" face="Garamond">{{n.profesion}}</font></td>
+            <td><a href="{% url 'elimina_profesor' n.id %}">Borrar</a></td>
+            <td><a href="{% url 'editar_profesor' n.id %}">Editar</a></td>
+            
+        </tr>
+        {% endfor %}
+    
+    </tbody>
+  </table>
+  <button><a href="alta_profesor">Agregar nuevos Profesores</a></button>
+  <button><a href="{% url 'home' %}">Volver </a></button>
+
+{% endblock %}

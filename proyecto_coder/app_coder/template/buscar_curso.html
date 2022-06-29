@@ -1,0 +1,27 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block contenido%}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        
+        <h1 align="center"><font face="Garamond">Buscar Curso</font></h1>
+
+        <form align="center" action="buscar" method="GET">
+            <p><font face="Garamond">Nombre:</font></p>
+            <input type="text" name="nombre" id="nombre"required>
+            <input type="submit" value="Buscar">
+        </form>   
+        <button><a href="{% url 'home' %}">Volver </a></button>    
+    </body>
+    </html>
+
+{% endblock %}
